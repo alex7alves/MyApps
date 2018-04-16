@@ -6,71 +6,60 @@
     android:layout_height="match_parent"
     tools:context="com.example.alve.calculadora.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.948"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/button"
         android:layout_width="164dp"
         android:layout_height="52dp"
 
-        android:text="Somar"
-        app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintTop_toTopOf="parent"
         android:onClick="Somar"
-        app:layout_constraintVertical_bias="0.607" />
+        android:text="Somar"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.553" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="164dp"
         android:layout_height="wrap_content"
-        android:text="Subtrair"
         android:onClick="Subtrair"
+        android:text="Subtrair"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button4"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.714" />
+        app:layout_constraintVertical_bias="0.66" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="169dp"
         android:layout_height="wrap_content"
-        android:text="Multiplicar"
         android:onClick="Multiplicar"
+        android:text="Multiplicar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button4"
+        app:layout_constraintStart_toStartOf="@+id/button5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintVertical_bias="0.868" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="166dp"
         android:layout_height="wrap_content"
-        android:text="Dividir"
         android:onClick="Dividir"
+        android:text="Dividir"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.818" />
+        app:layout_constraintVertical_bias="0.764" />
 
     <EditText
         android:id="@+id/editText"
         android:layout_width="142dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="number|numberDecimal"
-        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -79,10 +68,10 @@
         android:id="@+id/editText2"
         android:layout_width="159dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="112dp"
         android:ems="10"
         android:inputType="number|numberDecimal"
-        app:layout_constraintHorizontal_bias="0.976"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -91,7 +80,7 @@
         android:id="@+id/editText3"
         android:layout_width="142dp"
         android:layout_height="47dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginTop="176dp"
         android:ems="10"
         android:inputType="number|numberDecimal"
         app:layout_constraintHorizontal_bias="0.933"
@@ -103,7 +92,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="60dp"
         android:text="Digite o primeiro numero :"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -114,7 +103,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="136dp"
         android:text="Digite o segundo numero"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -125,9 +114,21 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="196dp"
         android:text="O resultado é :"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.105"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="168dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="444dp"
+        android:onClick="Potencia"
+        android:text="Potencia"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

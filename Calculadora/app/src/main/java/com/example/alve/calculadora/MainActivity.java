@@ -44,4 +44,7 @@ public class MainActivity extends AppCompatActivity {
         setResultado(getCampo(campo1)*getCampo(campo2));
     }
 
+    public void Potencia(View view) {
+        setResultado(Math.pow(getCampo(campo1),getCampo(campo2)));
+    }
 }
