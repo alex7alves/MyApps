@@ -7,38 +7,41 @@ import android.widget.EditText;
 import java.lang.String;
 public class MainActivity extends AppCompatActivity {
 
-
+    EditText campo1,campo2,resultado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        setInitEditText();
     }
 
-    public void Somar(View view){
-        EditText c1 = (EditText)findViewById(R.id.editText);
-        EditText c2 = (EditText)findViewById(R.id.editText2);
-        EditText c3 = (EditText)findViewById(R.id.editText3);
-       // c3.setText("200");
-        String x = String.valueOf(c1.getText());
-        double x2 = Double.parseDouble(x);
-        String y = String.valueOf(c2.getText());
-        double y2 = Double.parseDouble(y);
-        double z= x2+y2;
-        String s =""+z+"";
-        c3.setText(s);
+    public void setInitEditText(){
+        campo1 = (EditText)findViewById(R.id.editText);
+        campo2 = (EditText)findViewById(R.id.editText2);
+        resultado = (EditText)findViewById(R.id.editText3);
 
+        campo1.setText("0");
+        campo2.setText("0");
+    }
+    public double getCampo( EditText c){
+        String s = String.valueOf(c.getText());
+        return Double.parseDouble(s);
+    }
+    public void setResultado(double z){
+        resultado.setText(""+z+"");
+    }
+    public void Somar(View view){
+        setResultado(getCampo(campo1)+getCampo(campo2));
     }
     public void Subtrair(View view){
-        EditText c3 = (EditText)findViewById(R.id.editText3);
-        c3.setText("200");
+        setResultado(getCampo(campo1)-getCampo(campo2));
     }
-    private void Dividir(View view){
-
+    public void Dividir(View view){
+        setResultado(getCampo(campo1)/getCampo(campo2));
     }
-    private void Multiplicar(View view){
-
+    public void Multiplicar(View view){
+        setResultado(getCampo(campo1)*getCampo(campo2));
     }
 
 }
