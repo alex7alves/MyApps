@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.vision.CameraSource;
+import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Da API vision do google
-        TextRecognizer pegarTexto = new TextRecognizer.Builder(getApplicationContext()).build();
+        final TextRecognizer pegarTexto = new TextRecognizer.Builder(getApplicationContext()).build();
 
         if (!pegarTexto.isOperational()) {
             Toast.makeText(getApplicationContext(), " Texto não abriu", Toast.LENGTH_SHORT).show();
@@ -84,6 +85,19 @@ public class MainActivity extends AppCompatActivity {
                             return;
                         }
                         capturar.start(camera.getHolder());
+                        pegarTexto.setProcessor(new Detector.Processor<TextBlock>() {
+
+                            @Override
+                            public void release() {
+
+                            }
+
+                            @Override
+                            public void receiveDetections(Detector.Detections<TextBlock> detections) {
+
+                            }
+                        });
+
                     }catch (IOException e){
                         e.printStackTrace();
                     }
@@ -96,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
                 @Override
                 public void surfaceDestroyed(SurfaceHolder surfaceHolder) {
-
+                    capturar.stop();
                 }
             });
             SparseArray<TextBlock> palavras = pegarTexto.detect(frame);
