@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 public void surfaceCreated(SurfaceHolder surfaceHolder) {
                     try {
                         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                            ActivityCompat.requestPermissions(MainActivity.this, new String[](Manifest.permission.CAMERA),
+                            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CAMERA},
                             cameraPermission);
                             return;
                         }
@@ -94,7 +94,24 @@ public class MainActivity extends AppCompatActivity {
 
                             @Override
                             public void receiveDetections(Detector.Detections<TextBlock> detections) {
+                                final SparseArray<TextBlock> palavras = detections.getDetectedItems();
+                                if(palavras.size() !=0){
+                                    texto.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            StringBuilder s = new StringBuilder();
 
+                                            for(int i=0;i<palavras.size();i++){
+
+                                                TextBlock p = palavras.valueAt(i);
+                                                s.append(p.getValue());
+                                                s.append("\n");
+                                            }
+
+                                             texto.setText(s.toString());
+                                        }
+                                    });
+                                }
                             }
                         });
 
@@ -113,17 +130,7 @@ public class MainActivity extends AppCompatActivity {
                     capturar.stop();
                 }
             });
-            SparseArray<TextBlock> palavras = pegarTexto.detect(frame);
 
-            StringBuilder s = new StringBuilder();
-
-            for(int i=0;i<palavras.size();i++){
-
-                TextBlock p = palavras.valueAt(i);
-                s.append(p.getValue());
-                s.append("\n");
-            }
-           // campo.setText(s.toString());
         }
     }
 }
