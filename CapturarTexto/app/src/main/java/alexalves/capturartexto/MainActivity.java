@@ -23,11 +23,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        campo = (EditText)findViewById(R.id.editText);
-        imagem = (ImageView)findViewById(R.id.imageView);
+        setInitComponentes();
+
     }
 
+    public void setInitComponentes(){
+        campo = (EditText)findViewById(R.id.editText2);
+        imagem = (ImageView)findViewById(R.id.imageView);
 
+        campo.setText("");
+    }
     public void getTexto(View view) {
 
         Bitmap bm = BitmapFactory.decodeResource(getApplicationContext().getResources(),R.drawable.olhos);
@@ -51,5 +56,12 @@ public class MainActivity extends AppCompatActivity {
             }
             campo.setText(s.toString());
         }
+    }
+
+    public void SegundaTela(View view){
+        /*Intent it = new Intent(MainActivity.this, tela2.xml);
+        startActivity(it);
+        */
+        setContentView(R.layout.tela2);
     }
 }
