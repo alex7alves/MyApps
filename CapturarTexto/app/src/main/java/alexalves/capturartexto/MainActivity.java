@@ -1,5 +1,6 @@
 package alexalves.capturartexto;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
@@ -59,9 +60,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SegundaTela(View view){
-        /*Intent it = new Intent(MainActivity.this, tela2.xml);
-        startActivity(it);
-        */
         setContentView(R.layout.tela2);
+    }
+    public void TelaCheia(View view){
+        Intent telaC = new Intent(MainActivity.this, SegundaTela.class);
+        telaC.putExtra("tela",String.valueOf(campo.getText()));
+        startActivity(telaC);
     }
 }

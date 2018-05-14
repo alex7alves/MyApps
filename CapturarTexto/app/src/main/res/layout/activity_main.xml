@@ -53,7 +53,8 @@
         android:onClick="SegundaTela"
         android:text="Tela2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="264dp" />
 
     <Button
         android:id="@+id/button3"
@@ -62,7 +63,9 @@
         android:layout_marginBottom="16dp"
         android:layout_marginStart="128dp"
         android:background="@color/colorPrimary"
+        android:onClick="TelaCheia"
         android:text="Tela cheia"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="128dp" />
 </android.support.constraint.ConstraintLayout>
